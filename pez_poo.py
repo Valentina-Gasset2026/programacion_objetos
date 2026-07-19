@@ -16,8 +16,8 @@ class Pez :
        # print(f"Hola, este pez es animal acuatico y se llama {self.nombre}, vive en hábitads {self.habitad}, esta especie de pez esta dispersa en {self.lugares_de_origen}")
 
 class Pez_espada(Pez):
-    def __init__(self, nombre, nombre_cientifico, tamaño, peso, habitad, lugares_de_origen, tipo_de_cuerpo, estado_en_la_cadena_alimenticia,velocidad):
-        super().__init__(nombre, nombre_cientifico, tamaño, peso, habitad, lugares_de_origen, tipo_de_cuerpo, estado_en_la_cadena_alimenticia,velocidad)
+    def __init__(self, nombre, nombre_cientifico, tamaño, peso, habitad, lugares_de_origen, alimento, tipo_de_cuerpo, estado_en_la_cadena_alimenticia,velocidad):
+        super().__init__(nombre, nombre_cientifico, tamaño, peso, habitad, lugares_de_origen, alimento, tipo_de_cuerpo, estado_en_la_cadena_alimenticia,velocidad)
         self.velocidad = velocidad
     
     def nadar(self):
