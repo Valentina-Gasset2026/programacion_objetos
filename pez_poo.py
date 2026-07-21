@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from PIL import Image
-class Pez :
+class Pez(ABC):
     def __init__(self,nombre,nombre_cientifico,tamaño,peso,habitad,lugares_de_origen, alimento ,tipo_de_cuerpo,estado_en_la_cadena_alimenticia, ruta_imagen=None):
         self.nombre = nombre
         self.nombre_cientifico = nombre_cientifico
@@ -56,5 +56,29 @@ datos_pez_espada = Pez_espada("Pez Espada", "Xiphias gladius", 4.5, 500, "En agu
 datos_pez_espada.mostrar_imagen()
 datos_pez_espada.nadar()
 datos_pez_espada.presentar_pez()
+
+class Pez_Koi(Pez):
+    def __init__(self, nombre, nombre_cientifico, tamaño, peso, habitad, lugares_de_origen, alimento, tipo_de_cuerpo, estado_en_la_cadena_alimenticia, variedad, domesticar, resistencia, ruta_imagen=None):
+        super().__init__(nombre, nombre_cientifico, tamaño, peso, habitad, lugares_de_origen, alimento, tipo_de_cuerpo, estado_en_la_cadena_alimenticia, ruta_imagen)
+        self.variedad = variedad
+        self.domesticar = domesticar
+        self.resistencia = resistencia
+    
+    def nadar(self):
+        print("Pez koi nadando :) 🐟")
+
+    def presentar_pez(self):
+        print(f"Este es un {self.nombre}.")
+        print(f"Su nombre cientifico es {self.nombre_cientifico}")
+        print(f"Su peso es de {self.peso} kg.")
+        print(f"Se tamaño es de {self.tamaño} m.")
+        print(f"Viven en hábitads como {self.habitad}")
+        print(f"Este pez se encuentra en disperso en {self.lugares_de_origen}")
+        print(f"Este pez tiene {self.variedad}")
+        print(f"Este pez se puede {self.domesticar}")
+        print(f"Este pez tiene {self.resistencia}")
+        print(f"Este pez se aliemnta de {self.alimento}")
+        print(f"Su estado en la cadena alimenticia es {self.estado_en_la_cadena_alimenticia}")
+        print(f"Su tipo de cuerpo es {self.tipo_de_cuerpo}")
 
 
