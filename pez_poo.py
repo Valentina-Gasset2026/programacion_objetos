@@ -63,16 +63,17 @@ class Pez_Koi(Pez):
         self.variedad = variedad
         self.domesticar = domesticar
         self.resistencia = resistencia
+        
     
-    def nadar(self):
+    def nadar(self): #Metodo
         print("Pez koi nadando :) 🐟")
 
     def presentar_pez(self):
         print(f"Este es un {self.nombre}.")
         print(f"Su nombre cientifico es {self.nombre_cientifico}")
-        print(f"Su peso es de {self.peso} kg.")
-        print(f"Se tamaño es de {self.tamaño} m.")
-        print(f"Viven en hábitads como {self.habitad}")
+        print(f"Su peso es de {self.peso}")
+        print(f"Se tamaño es de {self.tamaño}")
+        print(f"Viven en hábitads {self.habitad}")
         print(f"Este pez se encuentra en disperso en {self.lugares_de_origen}")
         print(f"Este pez tiene {self.variedad}")
         print(f"Este pez se puede {self.domesticar}")
@@ -81,4 +82,7 @@ class Pez_Koi(Pez):
         print(f"Su estado en la cadena alimenticia es {self.estado_en_la_cadena_alimenticia}")
         print(f"Su tipo de cuerpo es {self.tipo_de_cuerpo}")
 
-
+datos_pez_koi = Pez_Koi("Pez Koi o Carpas Koi", "Cyprinus carpio", "80 cm o más", "10 kilos o más", "arenosos o con fango", "Asia Central(especificamente en las cuencas de los mares Negro, Caspio y Aral, dicho lugares corresponde el lugar de origen de este Pez), Japón, China(En Japón y China se domesticaron), también se peuden encontrar en los parques, estanques y criaderos al rededor del mundo", "pellets o sticks, Larvas de mosquito, gusanos de sangre, camarones pequeños, Vegetales,etc", "óseo", "nivel de consumidor primario y secundario", "más de 100 variedades, las cuales se clasifican a partir de los aptrones de colores, tipo de escamas y origen, sus clasificaciones son las siguientes: Gosanke, Utsurimono, Tarcho, Asagi, Ochiba, etc", "domesticar", "Una gran resistencia, tiene una adaptabilidad térmica que los permite tolerar fríos inviernos, además, tiene una gran resistencia a las enfermedades y cuenta con una dieta omnívora, al cual le permite comer plantas, algas, insectos y crustáceos", ruta_imagen= "Pez_koi.PNG")
+datos_pez_koi.mostrar_imagen()
+datos_pez_koi.nadar()
+datos_pez_koi.presentar_pez()
