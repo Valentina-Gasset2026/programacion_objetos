@@ -53,9 +53,6 @@ class Pez_espada(Pez):
         print(f"Su tipo de cuerpo es {self.tipo_de_cuerpo}")
         
 datos_pez_espada = Pez_espada("Pez Espada", "Xiphias gladius", 4.5, 500, "En aguas tropicales, subtropicales y templadas", "El Norte de Hawái, Pacífico Norte y Sur (Perú y Chile), costas orientales de EEUU, México y al este de Japón", "Atún, barracuda, Pez volador, verdel, calamares, etc.", "Oseo", "En la cima de la cadena alimenticia, es decir, que es un super depredador, sin embargo, este pez tiene algunos depredadores que lo acechan, dichos depredadores son las Orcas y El marrajo dientuso(un tipo de Tiburón).", 100, ruta_imagen="pez_espada.png")
-datos_pez_espada.mostrar_imagen()
-datos_pez_espada.nadar()
-datos_pez_espada.presentar_pez()
 
 class Pez_Koi(Pez):
     def __init__(self, nombre, nombre_cientifico, tamaño, peso, habitad, lugares_de_origen, alimento, tipo_de_cuerpo, estado_en_la_cadena_alimenticia, variedad, domesticar, resistencia, ruta_imagen=None):
@@ -83,9 +80,7 @@ class Pez_Koi(Pez):
         print(f"Su tipo de cuerpo es {self.tipo_de_cuerpo}")
 
 datos_pez_koi = Pez_Koi("Pez Koi o Carpas Koi", "Cyprinus carpio", "80 cm o más", "10 kilos o más", "arenosos o con fango", "Asia Central(especificamente en las cuencas de los mares Negro, Caspio y Aral, dicho lugares corresponde el lugar de origen de este Pez), Japón, China(En Japón y China se domesticaron), también se peuden encontrar en los parques, estanques y criaderos al rededor del mundo", "pellets o sticks, Larvas de mosquito, gusanos de sangre, camarones pequeños, Vegetales,etc", "óseo", "nivel de consumidor primario y secundario", "más de 100 variedades, las cuales se clasifican a partir de los aptrones de colores, tipo de escamas y origen, sus clasificaciones son las siguientes: Gosanke, Utsurimono, Tarcho, Asagi, Ochiba, etc", "domesticar", "Una gran resistencia, tiene una adaptabilidad térmica que los permite tolerar fríos inviernos, además, tiene una gran resistencia a las enfermedades y cuenta con una dieta omnívora, al cual le permite comer plantas, algas, insectos y crustáceos", ruta_imagen= "Pez_koi.PNG")
-datos_pez_koi.mostrar_imagen()
-datos_pez_koi.nadar()
-datos_pez_koi.presentar_pez()
+
 
 class salmon_rojo(Pez):
     def __init__(self, nombre, nombre_cientifico, tamaño, peso, habitad, lugares_de_origen, alimento, tipo_de_cuerpo, estado_en_la_cadena_alimenticia, fuerza, ruta_imagen=None):
@@ -108,6 +103,39 @@ class salmon_rojo(Pez):
         print(f"Su tipo de cuerpo es {self.tipo_de_cuerpo}")
         
 datos_salmon_rojo = salmon_rojo("Pez Salmón rojo", "Oncorhynchus nerka", "45-84", "1.8-7", "En aguas frías del océano Pácífico Norte y ríos de agua dulce", "En Norteamerica(Alaka,Canadá y en el estado de California),Asia(Japón) y Europa(Rusia)","zooplancton, krill, insectos y larvas","óseo", " es un consumidor secundario y terciario (carnívoro)", " Su musculatura está adaptada para nadar contracorriente. Pueden realizar saltos de hasta 3,7 metros de altura para superar cascadas o rápidos durante su migración.", ruta_imagen= "Salmon_rojo.PNG") 
-datos_salmon_rojo.mostrar_imagen()
-datos_salmon_rojo.nadar()
-datos_salmon_rojo.presentar_pez()
+
+def validar_opcion_menu():
+    validar_opcion = False
+    while validar_opcion == False:
+        try:
+            opcion = int(input("Ingrese una opcion(1-4): "))
+            if opcion >=1 and opcion <= 4:
+                validar_opcion = True
+            else:
+                print("Ingrese una opción que este entre el 1 y el 4")
+        except ValueError:
+            print("Ingrese un dato valido (numero entero)")
+    return opcion
+
+
+
+activo = False
+while activo == False:
+    opt = validar_opcion_menu()
+    if opt == 1:
+        datos_pez_espada.mostrar_imagen()
+        datos_pez_espada.nadar()
+        datos_pez_espada.presentar_pez()
+    elif opt == 2:
+        datos_pez_koi.mostrar_imagen()
+        datos_pez_koi.nadar()
+        datos_pez_koi.presentar_pez()
+    elif opt == 3:
+        datos_salmon_rojo.mostrar_imagen()
+        datos_salmon_rojo.nadar()
+        datos_salmon_rojo.presentar_pez()
+    else:
+        print("Hasta pronto  :D")
+        activo = True
+
+        
