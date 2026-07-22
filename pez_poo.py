@@ -86,3 +86,28 @@ datos_pez_koi = Pez_Koi("Pez Koi o Carpas Koi", "Cyprinus carpio", "80 cm o más
 datos_pez_koi.mostrar_imagen()
 datos_pez_koi.nadar()
 datos_pez_koi.presentar_pez()
+
+class salmon_rojo(Pez):
+    def __init__(self, nombre, nombre_cientifico, tamaño, peso, habitad, lugares_de_origen, alimento, tipo_de_cuerpo, estado_en_la_cadena_alimenticia, fuerza, ruta_imagen=None):
+        super().__init__(nombre, nombre_cientifico, tamaño, peso, habitad, lugares_de_origen, alimento, tipo_de_cuerpo, estado_en_la_cadena_alimenticia, ruta_imagen)
+        self.fuerza = fuerza
+    
+    def nadar(self):
+        print("Nadando   :)")
+    
+    def presentar_pez(self):
+        print(f"Este es un {self.nombre}.")
+        print(f"Su nombre cientifico es {self.nombre_cientifico}")
+        print(f"Su peso es de {self.peso} kg.")
+        print(f"Se tamaño es de {self.tamaño} cm.")
+        print(f"Viven en hábitads como {self.habitad}")
+        print(f"Este pez se encuentra en disperso en {self.lugares_de_origen}")
+        print(f"Su velocidad es de {self.fuerza}")
+        print(f"Este pez se aliemnta de {self.alimento}")
+        print(f"Su estado en la cadena alimenticia es {self.estado_en_la_cadena_alimenticia}")
+        print(f"Su tipo de cuerpo es {self.tipo_de_cuerpo}")
+        
+datos_salmon_rojo = salmon_rojo("Pez Salmón rojo", "Oncorhynchus nerka", "45-84", "1.8-7", "En aguas frías del océano Pácífico Norte y ríos de agua dulce", "En Norteamerica(Alaka,Canadá y en el estado de California),Asia(Japón) y Europa(Rusia)","zooplancton, krill, insectos y larvas","óseo", " es un consumidor secundario y terciario (carnívoro)", " Su musculatura está adaptada para nadar contracorriente. Pueden realizar saltos de hasta 3,7 metros de altura para superar cascadas o rápidos durante su migración.", ruta_imagen= "Salmon_rojo.PNG") 
+datos_salmon_rojo.mostrar_imagen()
+datos_salmon_rojo.nadar()
+datos_salmon_rojo.presentar_pez()
