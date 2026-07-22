@@ -117,10 +117,35 @@ def validar_opcion_menu():
             print("Ingrese un dato valido (numero entero)")
     return opcion
 
+def mostrar_menu_imagen(ruta_imagen="menu_pez.png"):
+    """Abre la imagen del menú con las 4 opciones"""
+    try:
+        img = Image.open(ruta_imagen)
+        img.show()
+        print(f"Mostrando menú: {ruta_imagen}")
+    except FileNotFoundError:
+        print(f"Error: No encontré la imagen del menú en '{ruta_imagen}'")
+        print("Asegúrate de que el archivo 'menu_pez.png' esté en la misma carpeta.")
+    except Exception as e:
+        print(f"Error al abrir la imagen: {e}")
+
+def mostrar_mensaje(ruta_imagen="hasta_pronto.png"):
+    """Abre la imagen del menú con las 4 opciones"""
+    try:
+        img = Image.open(ruta_imagen)
+        img.show()
+        print(f"Mostrando menú: {ruta_imagen}")
+    except FileNotFoundError:
+        print(f"Error: No encontré la imagen del menú en '{ruta_imagen}'")
+        print("Asegúrate de que el archivo 'menu_pez.png' esté en la misma carpeta.")
+    except Exception as e:
+        print(f"Error al abrir la imagen: {e}")
+
 
 
 activo = False
 while activo == False:
+    mostrar_menu_imagen()
     opt = validar_opcion_menu()
     if opt == 1:
         datos_pez_espada.mostrar_imagen()
@@ -135,6 +160,7 @@ while activo == False:
         datos_salmon_rojo.nadar()
         datos_salmon_rojo.presentar_pez()
     else:
+        mostrar_mensaje()
         print("Hasta pronto  :D")
         activo = True
 
